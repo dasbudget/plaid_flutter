@@ -46,19 +46,19 @@ class PlaidFlutterPlugin {
   }
 
   void open(Map<dynamic, dynamic> arguments) {
-    final String? token = arguments['token'];
-    final String? publicKey = arguments['publicKey'];
-    final String? clientName = arguments['clientName'];
-    final String? environment = arguments['environment'];
-    final String? linkCustomizationName = arguments['linkCustomizationName'];
-    final String? language =
+    final String token = arguments['token'];
+    final String publicKey = arguments['publicKey'];
+    final String clientName = arguments['clientName'];
+    final String environment = arguments['environment'];
+    final String linkCustomizationName = arguments['linkCustomizationName'];
+    final String language =
         arguments['language'] == null ? 'en' : arguments['language'];
-    final String? webhook = arguments['webhook'];
-    final String? userLegalName = arguments['userLegalName'];
-    final String? userEmailAddress = arguments['userEmailAddress'];
-    final String? userPhoneNumber = arguments['userPhoneNumber'];
-    final String? oauthNonce = arguments['oauthNonce'];
-    final String? oauthRedirectUri = arguments['oauthRedirectUri'];
+    final String webhook = arguments['webhook'];
+    final String userLegalName = arguments['userLegalName'];
+    final String userEmailAddress = arguments['userEmailAddress'];
+    final String userPhoneNumber = arguments['userPhoneNumber'];
+    final String oauthNonce = arguments['oauthNonce'];
+    final String oauthRedirectUri = arguments['oauthRedirectUri'];
     List<String> countryCodes = arguments['countryCodes'] == null
         ? ['']
         : List<String>.from(arguments['countryCodes']);

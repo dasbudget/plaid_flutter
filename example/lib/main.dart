@@ -9,7 +9,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late PlaidLink _plaidPublicKey, _plaidLinkToken;
+  PlaidLink _plaidPublicKey, _plaidLinkToken;
 
   @override
   void initState() {
@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
     print("onEvent: $event, metadata: ${metadata.description()}");
   }
 
-  void _onExitCallback(LinkError? error, LinkExitMetadata metadata) {
+  void _onExitCallback(LinkError error, LinkExitMetadata metadata) {
     print("onExit metadata: ${metadata.description()}");
 
     if (error != null) {

@@ -5,7 +5,7 @@ import 'metadata.dart';
 
 typedef void SuccessCallback(String publicToken, LinkSuccessMetadata metadata);
 
-typedef void ExitCallback(LinkError? error, LinkExitMetadata metadata);
+typedef void ExitCallback(LinkError error, LinkExitMetadata metadata);
 
 typedef void EventCallback(String eventName, LinkEventMetadata metadata);
 
@@ -13,7 +13,7 @@ typedef void EventCallback(String eventName, LinkEventMetadata metadata);
 class PlaidLink {
   /// The Plaid Link object.
   PlaidLink({
-    required this.configuration,
+    this.configuration,
     this.onSuccess,
     this.onExit,
     this.onEvent,
@@ -47,7 +47,7 @@ class PlaidLink {
   ///   * subtype: the account subtype
   ///
   /// For more information: https://plaid.com/docs/#onsuccess-callback
-  final SuccessCallback? onSuccess;
+  final SuccessCallback onSuccess;
 
   /// Called when a user exits the Plaid Link flow.
   ///
@@ -56,7 +56,7 @@ class PlaidLink {
   ///   * [metadata] An [ExitMetadata] object containing information about the last error encountered by the user (if any), institution selected by the user, and the most recent API request ID, and the Link session ID.
   ///
   /// For more information see https://plaid.com/docs/#onexit-callback
-  final ExitCallback? onExit;
+  final ExitCallback onExit;
   //
   /// Called when a Plaid Link event occurs.
   ///
@@ -65,7 +65,7 @@ class PlaidLink {
   ///   * [metadata] An [EventMetadata] object containing information about the event.
   ///
   /// For more information see https://plaid.com/docs/#onevent-callback
-  final EventCallback? onEvent;
+  final EventCallback onEvent;
 
   /// Handles receiving messages on the [MethodChannel]
   Future<void> _onMethodCall(MethodCall call) async {
